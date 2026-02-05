@@ -1,6 +1,4 @@
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
@@ -28,7 +26,6 @@ body.night .container {
   color: #ffd1dc;
 }
 
-/* BUTTON */
 .mode-btn {
   position: absolute;
   top: 15px;
@@ -62,7 +59,6 @@ body.night .container {
   position: absolute;
   top: -10px;
 }
-
 .ear.left { left: -15px; }
 .ear.right { right: -15px; }
 
@@ -74,7 +70,6 @@ body.night .container {
   position: absolute;
   top: 45px;
 }
-
 .eye.left { left: 35px; }
 .eye.right { right: 35px; }
 
@@ -87,6 +82,18 @@ body.night .container {
   top: 65px;
   left: 53px;
 }
+
+.blush {
+  width: 16px;
+  height: 10px;
+  background: pink;
+  border-radius: 50%;
+  position: absolute;
+  top: 60px;
+  opacity: 0;
+}
+.blush.left { left: 20px; }
+.blush.right { right: 20px; }
 
 .body {
   width: 140px;
@@ -118,7 +125,7 @@ body.night .container {
   animation: pulse 1s infinite;
 }
 
-/* SPEECH BUBBLE */
+/* TEXT */
 .bubble {
   margin-top: 10px;
   font-size: 16px;
@@ -126,28 +133,43 @@ body.night .container {
   transition: 0.3s;
 }
 
-/* MESSAGE */
 .message {
   margin-top: 20px;
   font-size: 20px;
-  line-height: 1.5;
-  padding: 0 15px;
   min-height: 90px;
 }
 
-.hug-count {
-  margin-top: 10px;
+.hug-count, .days {
   font-size: 16px;
+  margin-top: 6px;
 }
 
-/* FLOATING SPARKLES */
+/* SECRETS */
+.secret {
+  margin-top: 20px;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: 0.6s;
+  color: #ff4d88;
+}
+
+.secret.big {
+  font-size: 22px;
+}
+
+.secret.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* SPARKLES */
 .sparkle {
   position: absolute;
-  color: pink;
-  font-size: 12px;
+  bottom: 0;
   animation: sparkle 3s linear forwards;
 }
 
+/* ANIMATIONS */
 @keyframes bounce {
   0%,100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
@@ -165,25 +187,7 @@ body.night .container {
 
 @keyframes sparkle {
   from { opacity: 1; transform: translateY(0); }
-  to { opacity: 0; transform: translateY(-120px); }
-}
-/* SECRET MESSAGE */
-.secret {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #ff4d88;
-  opacity: 0;
-  transform: scale(0.8);
-  transition: 0.6s ease;
-  pointer-events: none;
+  to { opacity: 0; transform: translateY(-140px); }
 }
 
-.secret.show {
-  opacity: 1;
-  transform: scale(1);
-}
-
-body.night .secret {
-  color: #ffd1dc;
-}
 
