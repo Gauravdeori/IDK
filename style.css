@@ -11,16 +11,37 @@ body {
   align-items: center;
   font-family: "Comic Sans MS", cursive;
   overflow: hidden;
+  transition: 0.4s;
+}
+
+body.night {
+  background: linear-gradient(#1e1e2f, #2a2a40);
 }
 
 .container {
   text-align: center;
   transform: scale(0.9);
+  color: #b30059;
+}
+
+body.night .container {
+  color: #ffd1dc;
+}
+
+/* BUTTON */
+.mode-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 18px;
 }
 
 /* TEDDY */
 .teddy {
-  position: relative;
   animation: bounce 2s infinite;
 }
 
@@ -97,53 +118,52 @@ body {
   animation: pulse 1s infinite;
 }
 
+/* SPEECH BUBBLE */
+.bubble {
+  margin-top: 10px;
+  font-size: 16px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
 /* MESSAGE */
 .message {
   margin-top: 20px;
   font-size: 20px;
-  color: #b30059;
   line-height: 1.5;
   padding: 0 15px;
   min-height: 90px;
 }
 
-/* FLOATING HEARTS */
-.floating-heart {
-  position: absolute;
-  bottom: -20px;
-  font-size: 18px;
-  animation: floatUp 4s linear forwards;
-  opacity: 0.8;
+.hug-count {
+  margin-top: 10px;
+  font-size: 16px;
 }
 
-/* ANIMATIONS */
+/* FLOATING SPARKLES */
+.sparkle {
+  position: absolute;
+  color: pink;
+  font-size: 12px;
+  animation: sparkle 3s linear forwards;
+}
+
 @keyframes bounce {
-  0%, 100% { transform: translateY(0); }
+  0%,100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
 
 @keyframes wave {
-  0%, 100% { transform: rotate(10deg); }
+  0%,100% { transform: rotate(10deg); }
   50% { transform: rotate(-20deg); }
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); }
+  0%,100% { transform: scale(1); }
   50% { transform: scale(1.3); }
 }
 
-@keyframes floatUp {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-160px); opacity: 0; }
-}
-
-/* MOBILE FRIENDLY */
-@media (max-width: 480px) {
-  .container {
-    transform: scale(0.85);
-  }
-
-  .message {
-    font-size: 18px;
-  }
+@keyframes sparkle {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(-120px); }
 }
