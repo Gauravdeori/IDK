@@ -16,16 +16,25 @@ typeText();
 let hugs = 0;
 const bubble = document.getElementById("bubble");
 const count = document.getElementById("count");
+const secret = document.getElementById("secret");
 
 function hugTeddy() {
   hugs++;
   count.innerText = hugs;
+
   bubble.style.opacity = 1;
   bubble.innerText = "Aww 🥺 I feel your hug ❤️";
-
   setTimeout(() => bubble.style.opacity = 0, 1500);
 
   sparkle();
+
+  // 💖 UNLOCK MESSAGE AT 10 HUGS
+  if (hugs === 10) {
+    secret.classList.add("show");
+    bubble.style.opacity = 1;
+    bubble.innerText = "You unlocked something special 💕";
+    setTimeout(() => bubble.style.opacity = 0, 2000);
+  }
 }
 
 // Sparkles
