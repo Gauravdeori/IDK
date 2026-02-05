@@ -8,25 +8,30 @@
 </head>
 <body>
 
-  <div class="container">
-    <div class="teddy">
-      <div class="head">
-        <div class="ear left"></div>
-        <div class="ear right"></div>
-        <div class="eye left"></div>
-        <div class="eye right"></div>
-        <div class="nose"></div>
-      </div>
+<button class="mode-btn" onclick="toggleMode()">🌙</button>
 
-      <div class="body">
-        <div class="arm"></div>
-        <div class="heart">❤️</div>
-      </div>
+<div class="container">
+  <div class="teddy" onclick="hugTeddy()">
+    <div class="head">
+      <div class="ear left"></div>
+      <div class="ear right"></div>
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+      <div class="nose"></div>
     </div>
 
-    <div class="message" id="msg"></div>
+    <div class="body">
+      <div class="arm"></div>
+      <div class="heart">❤️</div>
+    </div>
   </div>
 
-  <script src="script.js"></script>
+  <div class="bubble" id="bubble">Hug me 🥺</div>
+
+  <div class="message" id="msg"></div>
+  <div class="hug-count">🤗 Hugs sent: <span id="count">0</span></div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
